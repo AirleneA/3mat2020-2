@@ -108,7 +108,11 @@ console.timeEnd('1003')
 // vetor-nomes.js na pasta dados
 // module.exports + require() só funciona no Node.js (não funciona
 // em JS dentro de páginas HTML)
+<<<<<<< HEAD
 const nomes = require['./dados/primos']
+=======
+const nomes = require('./dados/vetor-nomes')
+>>>>>>> 2a16df08c0a1b5eca36ead0df69f17cbf87a46d3
 
 // Busca do nome 'FAUSTO'
 console.time('FAUSTO')
