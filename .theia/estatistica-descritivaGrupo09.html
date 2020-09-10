@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset='utf-8'>
+            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+            <title>Estatisca Descritiva</title>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+            <script src='estatistica-descritivaGrupo09.js'></script>
+
+        </head>
+            <body>
+                <br>
+                <p>Selecione o tipo de tabela desejada:</p>
+                <select id="tipo_tabela" onchange="inserirDados()">
+                    <option value="" selected>Selecione uma opção</option>
+                    <option value="nominal">Qualitativa Nominal</option>
+                    <option value="ordinal">Qualitativa Ordinal</option>
+                    <option value="discreta">Quantitativa Discreta</option>
+                    <option value="continua">Quantitativa Continua</option>
+                </select>
+                <input type="file" name="upload-csv" id="arquivo" style="display: none;">
+                <button id="btn-upload-csv" onclick="lerCSV()" style="display: none">Carregar CSV</button> <br>
+                <label for="nome_variavel" id="label_nome" style="display:none">Nome da variável:</label>
+                <input type="text" id="nome_variavel" name="nome_variavel" placeholder="Digite a variavel" style="display:none"> 
+                <br>
+                <label for="dados_variavel" id="label_dados" style="display:none">Informe os valores:</label>
+                <input type="text" id="dados_variavel" size="200" name="dados_variavel" placeholder="Digite os dados da variavel, separando com ;" style="display:none">
+                <select name="tipo_desvio" id="tipo_desvio" style="display:block">
+                    <option value="amostra">Amostra</option>
+                    <option value="populacao">População</option>
+                </select>
+                <br>
+                <label for="ordem_valores" id="nome_ordem" style="display:none">Qual a ordem desejada:</label>
+                <input type="text" size="100" id="ordem_valores" name="ordem_valores" placeholder="Ordem dos valores separados por ;" style="display:none"> 
+                <button id="calcular" onclick="calcular()" style="display: none">Calcular</button>
+                <div>
+                    <br>
+                    <label id="nome_tabela"></label>
+                </div>
+                <br>
+
+                <div id="div_tabela_discreta_nominal_ordinal" style="display:none">
+                    <table border ="2">
+                        <thead>
+                            <tr>
+                                <th>Variavel</th>
+                                <th>FI</th>
+                                <th>FR%</th>
+                                <th>FAC</th>
+                                <th>FAC%</th>
+                            </tr>
+                        </thead>
+                        <tbody id="discreta_nominal_ordinal">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="div_tabela_continua" style="display:none">
+                    <table border ="2">
+                        <thead>
+                            <tr>
+                                <th>Variavel</th>
+                                <th>FI</th>
+                                <th>FR%</th>
+                                <th>FAC</th>
+                                <th>FAC%</th>
+                                <th>XI</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela_continua">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <br>
+                    <div id="texto_media"></div>
+                    <div id="texto_moda"></div>
+                    <div id="texto_mediana"></div>
+                    <div id="texto_desvio_padrao"></div>
+                    <div id="texto_coeficiente_variacao"></div>
+                </div>
+                <div style="top:60px; left:10px; width:600px; height:300px;" id="container_grafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </body>
+    </html>
