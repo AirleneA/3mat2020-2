@@ -1,4 +1,5 @@
 // Busca binária só funciona com uma lista preordenada
+let comp = 0
 function buscaBinaria(lista, valorBusca) {
     let inicio = 0
     let fim = lista.length - 1
@@ -26,12 +27,12 @@ function buscaBinaria(lista, valorBusca) {
     return -1  // o valor não foi encontrado
 }
 
-const primos = require [./Dados/primos']
+const primos = require('./Dados/primos')
 
 console.time('7723')
 console.log(buscaBinaria(primos, 7723))
 console.timeEnd('7723')
-console.log('comparações: '), comp
+console.log('comparações: ', comp)
 
 console.log('....................................')
 
@@ -39,7 +40,7 @@ comp = 0
 console.time('31')
 console.log(buscaBinaria(primos, 31))
 console.timeEnd('31')
-console.log('comparações: '), comp
+console.log('comparações: ', comp)
 
 console.log('....................................')
 
@@ -47,7 +48,7 @@ comp = 0
 console.time('3359')
 console.log(buscaBinaria(primos, 3359))
 console.timeEnd('3359')
-console.log('comparações: '), comp
+console.log('comparações: ', comp)
 
 console.log('....................................')
 
@@ -55,4 +56,4 @@ comp = 0
 console.time('3010')
 console.log(buscaBinaria(primos, 3010))
 console.timeEnd('3010')
-console.log('comparações: '), comp
+console.log('comparações: ', comp)

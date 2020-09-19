@@ -1,3 +1,4 @@
+comp = 0
 function buscaBinaria(lista, valorBusca) {
     let inicio = 0
     let fim = lista.length - 1
@@ -30,21 +31,46 @@ function buscaBinaria(lista, valorBusca) {
 }
 
 const listaNomes = require('./Dados/lista-nomes')
+
+
 console.time('FAUSTO')
 console.log(buscaBinaria(listaNomes, 'FAUSTO',(obj, busca) => {
     if(obj.first_name === busca) return 0
     else if (busca < obj.first_name) return -1
-    else 1
+    else return 1
 }))
 
 console.timeEnd('FAUSTO')
-console.log('comparações: comp')
+console.log('comparações:', comp)
 
 console.log('.......................')
 
-console.time('FAUSTO')
-console.log(buscaBinaria(listaNomes, 'FAUSTO',(obj, busca) => {
+comp = 0
+
+console.time('ORSELINA')
+console.log(buscaBinaria(listaNomes, 'ORSELINA',(obj, busca) => {
     if(obj.first_name === busca) return 0
     else if (busca < obj.first_name) return -1
-    else 1
+    else return 1
 }))
+
+console.timeEnd('ORSELINA')
+console.log('Comparações: ', comp)
+
+console.log('............................')
+
+comp = 0
+
+console.time('INSTAGRANILSON')
+console.log(buscaBinaria(listaNomes, 'INSTAGRANILSON',(obj, busca) => {
+    if(obj.first_name === busca) return 0
+    else if (busca < obj.first_name) return -1
+    else return 1
+}))
+
+console.timeEnd('INSTAGRANILSON')
+console.log('Comparações: ', comp)
+
+console.log('............................')
+
+

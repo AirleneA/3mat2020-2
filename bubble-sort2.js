@@ -16,26 +16,34 @@ function bubbleSort(vetor, fnComp){
         trocas = 0
 
         //percurso do vetor do início até a PENULTIMA posição (lenght - 2)
-        for(let i = 0; i <= vetor.length - 2; i ++){
+        for(let i = 0; i <= vetor.length - 2; i ++) {
             comparacoes++
             //if(vetor[i]> vetor [i + 1]) {
-              If(fnComp(vetor[i], vetor[i + 1])) {
-                //fazer a troca entre os elementos
-                [vetor[i], vetor[i+1]] = [vetor[i+1], vetor[i]]
+              if(fnComp(vetor[i], vetor[i + 1])) {
+                //fazer a troca entre os elementos usando DESESTRUTURAÇÃO (destructuring)
+                [vetor[i], vetor[i + 1]] = [vetor[i + 1], vetor[i]]
                 trocas++
             }
         }
        
-        totalTrocas += totalTrocas
+        totalTrocas += trocas
 
-    } while (trocas > 0)
+    } while(trocas > 0)
 
 console.log({passadas, comparacoes, totalTrocas})
 }
 
-const candidatos = require('./Dados/candidatos-2018')
+const candidatos = require ('./Dados/candidatos-2018')
 
-console.time('ordem NM_CANDIDATO')
+/*
+console.time('Ordem NM_CANDIDATO')
 bubbleSort(candidatos, (a, b) => a.NM_CANDIDATO > b.NM_CANDIDATO)
+console.timeEnd('ordem NM_CANDIDATO')
+console.log(candidatos)
+*/
+
+console.time('Ordem NM_CANDIDATO')
+bubbleSort(candidatos, (a, b) =>
+a.NM_CANDIDATO.localeCompare(b.NM_CANDIDATO, 'pt-BR') > 0)
 console.timeEnd('ordem NM_CANDIDATO')
 console.log(candidatos)

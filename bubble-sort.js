@@ -42,6 +42,7 @@ console.log(empresas)
 
 const nomes = require('./Dados/100-mil-nomes')
 
+
 console.time('Teste nomes')
 bubbleSort(nomes)
 console.timeEnd('Teste nomes')
