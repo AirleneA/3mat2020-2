@@ -39,8 +39,17 @@ const nums = [56, 68, 44, 23, 99, 14, 60, 37, 6 , 82, 31, 65]
 
 //console.log(encontrarMenor(nums, 9)) // Deve retornar 10, que é a posição do valor 31
 
+/*
 console.time('Teste nums')
 selectionSort(nums)
 console.timeEnd('Teste nums')
 console.log(nums)
+*/
+
+const nomes = require('./dados/100-mil-nomes')
+console.time('Teste nomes')
+selectionSort(nums)
+console.timeEnd('Teste nomes')
+console.log(nomes)
+
 
